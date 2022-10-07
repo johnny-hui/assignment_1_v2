@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/SERVER.dir/error.c.o CMakeFiles/SERVER.dir/conversion.c.o CMakeFiles/SERVER.dir/copy.c.o CMakeFiles/SERVER.dir/Server.c.o -o server   -L/usr/local/lib 
