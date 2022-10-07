@@ -220,11 +220,11 @@ DOXYGEN_DOT_EXECUTABLE:FILEPATH=/usr/bin/dot
 //Doxygen documentation generation tool (http://www.doxygen.org)
 DOXYGEN_EXECUTABLE:FILEPATH=/usr/bin/doxygen
 
-//Path to a library.
-LIBCGREEN:FILEPATH=LIBCGREEN-NOTFOUND
+//Path to a program.
+GITCOMMAND:FILEPATH=/usr/bin/git
 
 //Path to a library.
-LIBM:FILEPATH=/usr/lib64/libm.so
+LIBCGREEN:FILEPATH=LIBCGREEN-NOTFOUND
 
 //Path to a library.
 LIBSOCKET:FILEPATH=LIBSOCKET-NOTFOUND
@@ -401,6 +401,8 @@ DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
 DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
 //Details about finding Doxygen
 FIND_PACKAGE_MESSAGE_DETAILS_Doxygen:INTERNAL=[/usr/bin/doxygen][cfound components: doxygen dot ][v1.9.1()]
+//ADVANCED property for variable: GITCOMMAND
+GITCOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MAKECOMMAND
 MAKECOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_COMMAND

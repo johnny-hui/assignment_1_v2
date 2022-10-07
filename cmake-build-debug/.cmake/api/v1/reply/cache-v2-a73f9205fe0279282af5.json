@@ -1186,6 +1186,22 @@
 			"value" : "[/usr/bin/doxygen][cfound components: doxygen dot ][v1.9.1()]"
 		},
 		{
+			"name" : "GITCOMMAND",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/git"
+		},
+		{
 			"name" : "LIBCGREEN",
 			"properties" : 
 			[
@@ -1196,18 +1212,6 @@
 			],
 			"type" : "FILEPATH",
 			"value" : "LIBCGREEN-NOTFOUND"
-		},
-		{
-			"name" : "LIBM",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "/usr/lib64/libm.so"
 		},
 		{
 			"name" : "LIBSOCKET",
