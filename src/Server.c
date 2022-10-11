@@ -52,9 +52,18 @@ static void initialize_server_info(const struct options_server *opts, struct soc
 static void set_default_directory(struct options_server *opts);
 static char *get_client_dir(const struct options_server *opts, const char *client_ip);
 static void make_server_directory(const struct options_server *opts);
-
 static void make_client_directory(const char *client_dir);
 
+/**
+ * Drives the client program.
+ *
+ * @param argc
+ *          An integer representing the the number of arguments.
+ * @param argv
+ *          An array of arguments (as strings).
+ * @return EXIT_STATUS
+ *          An integer representing the exit_status.
+ */
 int main(int argc, char *argv[])
 {
     //a) Initialize Server and Socket
@@ -63,15 +72,17 @@ int main(int argc, char *argv[])
     parse_arguments(argc, argv, &opts);           /** Set all the process input */
     options_server_process(&opts);                /** Initialize socket and perform client handling */
 
-    //b) Do Stuff
-//    copy(opts.socket_fd, opts.fd_out, BUF_SIZE);
-
 /*    cleanup(&opts);*/
 
     return EXIT_SUCCESS;
 }
 
-
+/**
+ * Initializes the options_server struct using default settings.
+ *
+ * @param opts
+ *          An options_server struct to be modified.
+ */
 static void options_server_init(struct options_server *opts)
 {
     memset(opts, 0, sizeof(struct options_server));   //0 == NULL
@@ -81,6 +92,17 @@ static void options_server_init(struct options_server *opts)
     set_default_directory(opts);
 }
 
+/**
+ * Initializes properties in the options_server struct based on
+ * option flags provided by user in argument.
+ *
+ * @param argc
+ *          An integer representing the the number of arguments.
+ * @param argv
+ *          An array of arguments (as strings).
+ * @param opts
+ *          An options_server struct to be modified/read.
+ */
 static void parse_arguments(int argc, char *argv[], struct options_server *opts)
 {
     int c;
@@ -122,7 +144,14 @@ static void parse_arguments(int argc, char *argv[], struct options_server *opts)
     }
 }
 
-
+/**
+ * Initializes a server socket for listening and accepting
+ * connections to clients. Also handles server logic for each
+ * client.
+ *
+ * @param opts
+ *          An options_server struct to be modified/read.
+ */
 static void options_server_process(struct options_server *opts)
 {
     if(opts->file_name)
@@ -202,7 +231,7 @@ static void options_server_process(struct options_server *opts)
         unsigned int num_of_arguments_received;
         char file_size_string[10] = {0};
 
-        //1) NUM OF ARGS: Get # of arguments from client -> use it in for loop to write file x times
+        //NUM OF ARGS: Get # of arguments from client -> use it in for loop to write file x times
         if(read(opts->client_fd, &num_of_arguments_received,
                 sizeof(num_of_arguments_received)) == -1) {
             perror("An error has occurred while receiving number of arguments from client!\n");
@@ -211,7 +240,7 @@ static void options_server_process(struct options_server *opts)
         printf("\nNumber of files to be uploaded: %d\n", ntohl(num_of_arguments_received));
         num_of_arguments_received = ntohl(num_of_arguments_received);
 
-        //1) NUM OF ARGS: Send acknowledgement to client
+        //NUM OF ARGS: Send acknowledgement to client
         const char* response = "Received number of arguments!";
         send(opts->client_fd, response, strlen(response), 0);
 
@@ -253,7 +282,7 @@ static void options_server_process(struct options_server *opts)
                 perror("An error has occurred while receiving file length from client!\n");
                 printf("CLIENT IP: %s\n", client_ip);
             }
-            printf("File Payload Received: \n");
+            printf("File Payload Received!\n");
             printf("++++++++++++++++++++++++++++++++++++++++\n");
             printf("%s\n", payload_buffer);
 
@@ -270,6 +299,14 @@ static void options_server_process(struct options_server *opts)
     }
 }
 
+
+/**
+ * Makes a directory (defined in -d option argument) to
+ * separate each client and store their files in.
+ *
+ * @param opts
+ *          An options_server struct to be modified/read.
+ */
 static void make_server_directory(const struct options_server *opts) {
     DIR* dir = opendir(opts->directory);
 
@@ -286,6 +323,13 @@ static void make_server_directory(const struct options_server *opts) {
     }
 }
 
+/**
+ * Makes a client directory within the server's filesystem.
+ *
+ * @param client_dir
+ *          A string representing the client directory
+ *          within the server.
+ */
 static void make_client_directory(const char *client_dir) {
     DIR* dir = opendir(client_dir);
 
@@ -302,6 +346,17 @@ static void make_client_directory(const char *client_dir) {
     }
 }
 
+/**
+ * A helper function that returns a string representing
+ * the location of the client directory within the server.
+ *
+ * @param opts
+ *          An options_server struct to be modified/read.
+ * @param client_ip
+ *          A string representing the IP of the client.
+ * @return char*
+ *          A string representing the client directory.
+ */
 static char *get_client_dir(const struct options_server *opts, const char *client_ip) {
     char* client_dir = (char*) malloc(100 * sizeof(char));
     client_dir[0] = '\0';
@@ -311,6 +366,16 @@ static char *get_client_dir(const struct options_server *opts, const char *clien
     return client_dir;
 }
 
+/**
+ * Initializes and defines default parameters for
+ * creating the server socket. (Used for binding).
+ *
+ * @param opts
+ *          An options_server struct to be modified/read.
+ * @param server_info
+ *          A socket address struct containing server socket
+ *          information.
+ */
 static void initialize_server_info(const struct options_server *opts, struct sockaddr_in *server_info) {
     memset(server_info, 0, sizeof(struct sockaddr_in));   //0 == NULL
     server_info->sin_family = AF_INET;                            //Supports IPv4 (inet) addresses
@@ -323,6 +388,22 @@ static void initialize_server_info(const struct options_server *opts, struct soc
     }
 }
 
+/**
+ * Provides and prints information in regards to the
+ * connected client (once accepted).
+ *
+ * @param client_addr
+ *          A socket address struct containing client socket
+ *          information.
+ * @param client_addr_len
+ *          A size_t representing the socket length.
+ * @param client_ip
+ *          A string representing client IP.
+ * @param client_host_name
+ *          A string representing the client's host name.
+ * @return sockaddr_in
+ *          A socket address to the client.
+ */
 static struct sockaddr_in get_client_info(struct sockaddr_in *client_addr, socklen_t client_addr_len,
         char *client_ip, char *client_host_name) {
     strcpy(client_ip, inet_ntoa(client_addr->sin_addr));
@@ -337,11 +418,24 @@ static struct sockaddr_in get_client_info(struct sockaddr_in *client_addr, sockl
     return (*client_addr);
 }
 
+/**
+ * Sets the default directory to the current directory of client ./
+ * when initializing options_client struct.
+ *
+ * @param opts
+ *          An options_client struct to be modified/read.
+ */
 static void set_default_directory(struct options_server *opts) {
     memset(opts->directory, 0, sizeof(char) * HUNDRED);   //0 == NULL
     strcpy(opts->directory, DEFAULT_DIRECTORY);
 }
 
+/**
+ * Performs necessary cleanup before program terminates.
+ *
+ * @param opts
+ *          An options_client struct to be modified/read.
+ */
 static void cleanup(struct options_server *opts)
 {
     if(opts->file_name)

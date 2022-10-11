@@ -5,13 +5,11 @@
 #include <arpa/inet.h>
 #include <assert.h>
 #include <errno.h>
-#include <fcntl.h>
 #include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <stdbool.h>
 
 #define BUF_SIZE 1024
 #define DEFAULT_PORT 5000
@@ -27,9 +25,7 @@ struct options_client
     char *server_ip;
     char directory[100];
     in_port_t port;
-    int fd_in;
     int socket_fd;
-    int fd_out;
     char** file_names; //Array of char pointers (strings)
 };
 
@@ -44,6 +40,17 @@ static void add_file_args_to_array(char *const *argv, const struct options_clien
 static void send_files(const struct options_client *opts);
 static unsigned int number_of_non_option_arguments = ZERO;
 
+
+/**
+ * Drives the client program.
+ *
+ * @param argc
+ *          An integer representing the the number of arguments.
+ * @param argv
+ *          An array of arguments (as strings).
+ * @return EXIT_STATUS
+ *          An integer representing the exit_status.
+ */
 int main(int argc, char *argv[])
 {
     struct options_client opts; //Singleton
@@ -57,17 +64,30 @@ int main(int argc, char *argv[])
     return EXIT_SUCCESS;
 }
 
-
+/**
+ * Initializes the options_client struct using default settings.
+ *
+ * @param opts
+ *          An options_client struct to be modified.
+ */
 static void options_client_init(struct options_client *opts)
 {
     memset(opts, 0, sizeof(struct options_client)); //0 == NULL
-    opts->fd_in  = STDIN_FILENO;
-    opts->fd_out = STDOUT_FILENO;
     opts->port   = DEFAULT_PORT;
     set_default_directory(opts);
 }
 
-
+/**
+ * Initializes properties in the client_options struct based on
+ * option flags provided by user in argument.
+ *
+ * @param argc
+ *          An integer representing the the number of arguments.
+ * @param argv
+ *          An array of arguments (as strings).
+ * @param opts
+ *          An options_client struct to be modified/read.
+ */
 static void parse_arguments(int argc, char *argv[], struct options_client *opts)
 {
     int c;
@@ -105,21 +125,20 @@ static void parse_arguments(int argc, char *argv[], struct options_client *opts)
 
 //**********NOTE: optind will now represent the index of the first non-option argument!**********
 
-    //All file handler (*.txt)
+    //All files handler (*.txt)
     if(argv[optind][0] == '*') {
         //Do something
         printf("%s\n", argv[optind]);
         return;
     }
 
-    //Initialize an array of file names (strings) in memory
+    //If multiple files provided in argument
     initialize_string_array(argc, opts);
     size_t index = ZERO;
 
-    //Multiple File Handler (NOTE: fopen() checks for a file in current dir)
     while(optind < argc)
     {
-        //a) Check if file exists (before adding into array)
+        //Check if file exists (before adding into array)
         add_file_args_to_array(argv, opts, index);
         optind++;
         number_of_non_option_arguments++;
@@ -127,10 +146,23 @@ static void parse_arguments(int argc, char *argv[], struct options_client *opts)
     }
 }
 
+/**
+ * A helper function to parse_arguments() that checks whether each
+ * file name passed in as argument exists in current directory.
+ *
+ * If true, stores the file name in an array of strings.
+ *
+ * @param argv
+ *          An array of arguments (as strings).
+ * @param opts
+ *          An options_client struct to be modified/read.
+ * @param index
+ *          An integer that keeps track of opts->file_names array of strings.
+ */
 static void add_file_args_to_array(char *const *argv, const struct options_client *opts, size_t index) {
+    //NOTE: fopen() checks for a file in current dir
     FILE* file = fopen(argv[optind], "r");
     if(file) {
-//        printf("%s exists!\n", argv[optind]);
         sprintf(opts->file_names[index], "%s", argv[optind]);
         fclose(file);
     } else {
@@ -139,24 +171,15 @@ static void add_file_args_to_array(char *const *argv, const struct options_clien
     }
 }
 
-
+/**
+ * Initializes the socket for client to server connection and handles
+ * client logic upon connection.
+ *
+ * @param opts
+ *          An options_client struct to be modified/read.
+ */
 static void options_client_process(struct options_client *opts)
 {
-    if(opts->file_name && opts->server_ip)
-    {
-        fatal_message(__FILE__, __func__ , __LINE__, "Can't pass -i and a filename", 2);
-    }
-
-    if(opts->file_name)
-    {
-        opts->fd_in = open(opts->file_name, O_RDONLY); //MIGHT HAVE TO USE THIS FOR FILE BYTE TRANSFER
-
-        if(opts->fd_in == -1)
-        {
-            fatal_errno(__FILE__, __func__ , __LINE__, errno, 2);
-        }
-    }
-
     if(opts->server_ip)
     {
         int connection;
@@ -198,6 +221,14 @@ static void options_client_process(struct options_client *opts)
     }
 }
 
+/**
+ * A helper function to options_client_process().
+ *
+ * Handles the send files logic upon client connection to server.
+ *
+ * @param opts
+ *          An options_client struct to be modified/read.
+ */
 static void send_files(const struct options_client *opts) {
     char buffer[BUF_SIZE] = {0};
     int converted_num_of_args = (int) htonl(number_of_non_option_arguments);
@@ -230,7 +261,7 @@ static void send_files(const struct options_client *opts) {
             exit(EXIT_FAILURE);
         }
 
-        //a) Send file names to server, await response from server
+        //b) Send file names to server, await response from server
         printf("\n[+] Sending %s ...\n", opts->file_names[i]);
         if(send(opts->socket_fd, opts->file_names[i], sizeof(opts->file_names[i]), 0) == -1) {
             perror("An error has occurred while transferring file name to server!\n");
@@ -244,7 +275,7 @@ static void send_files(const struct options_client *opts) {
         }
         memset(receive_message, 0, sizeof(char) * 100);
 
-        //b) Get file size, send to server (as string), await response from server
+        //c) Get file size, send to server (as string), await response from server
         fseek(file_ptr, 0, SEEK_END);
         file_size = ftell(file_ptr);
         fseek(file_ptr, 0, SEEK_SET);
@@ -278,18 +309,35 @@ static void send_files(const struct options_client *opts) {
             memset(receive_message, 0, sizeof(char) * 100);
         }
 
-        //e) Reset Buffer for next iteration
         memset(buffer, 0, sizeof(char) * BUF_SIZE);
         fclose(file_ptr);
     }
+
+    //Disconnect from server (once file transfer is done)
     close(opts->socket_fd);
 }
 
+/**
+ * Sets the default directory to the current directory of client ./
+ * when initializing options_client struct.
+ *
+ * @param opts
+ *          An options_client struct to be modified/read.
+ */
 static void set_default_directory(struct options_client *opts) {
     memset(opts->directory, 0, sizeof(char) * HUNDRED);   //0 == NULL
     strcpy(opts->directory, DEFAULT_DIRECTORY);
 }
 
+/**
+ * Initializes an array of strings to hold file names
+ * of existing files within client directory.
+ *
+ * @param argc
+ *          An integer representing the the number of arguments.
+ * @param opts
+ *          An options_client struct to be modified/read.
+ */
 static void initialize_string_array(int argc, struct options_client *opts) {
     //a) Allocate space for (argc - optind) amount of pointers to strings
     opts->file_names = malloc(((unsigned long)(argc - optind)) * sizeof(char*));
@@ -304,19 +352,32 @@ static void initialize_string_array(int argc, struct options_client *opts) {
     }
 }
 
+/**
+ * Frees the memory allocated for each string in
+ * the opts->file_names array of strings.
+ *
+ * @param opts
+ *          An options_client struct to be modified/read.
+ */
 static void free_memory_strings(struct options_client *opts) {
     for(unsigned int i = ZERO; i < number_of_non_option_arguments; i++) {
         free(opts->file_names[i]);
     }
 }
 
+
+/**
+ * Performs necessary cleanup before program terminates.
+ *
+ * @param opts
+ *          An options_client struct to be modified/read.
+ */
 static void cleanup(struct options_client *opts)
 {
     printf("==================================================================================\n");
 
     if(opts->file_name)
     {
-        close(opts->fd_in);
         free_memory_strings(opts);
         free(opts->file_names);
         printf("[+] Memory successfully freed!\n");
@@ -324,7 +385,6 @@ static void cleanup(struct options_client *opts)
     }
     else if(opts->server_ip)
     {
-        close(opts->fd_in);
         close(opts->socket_fd);
         free_memory_strings(opts);
         free(opts->file_names);
