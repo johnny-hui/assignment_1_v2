@@ -4,17 +4,17 @@
 
 
 # Configuration directories and files
-SourceDirectory: /Users/Johnny/Downloads/v4
-BuildDirectory: /Users/Johnny/Downloads/v4/cmake-build-debug
+SourceDirectory: /home/johnnyhui/Desktop/assignment_1_v2
+BuildDirectory: /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: Users-MacBook-Pro-2.local
+Site: fedora
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Darwin-cc
+BuildName: Linux-cc
 
 # Subprojects
 LabelsForSubprojects: 
@@ -27,8 +27,8 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake" "/Users/Johnny/Downloads/v4"
-MakeCommand: /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
+ConfigureCommand: "/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake" "/home/johnnyhui/Desktop/assignment_1_v2"
+MakeCommand: /home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -45,7 +45,7 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: /usr/local/bin/git
+GITCommand: /usr/bin/git
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -58,7 +58,7 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
-UpdateCommand: /usr/local/bin/git
+UpdateCommand: /usr/bin/git
 UpdateOptions: 
 UpdateType: git
 

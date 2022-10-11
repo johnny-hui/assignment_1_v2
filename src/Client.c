@@ -194,17 +194,16 @@ static void options_client_process(struct options_client *opts)
 
         //c) Send Files
         send_files(opts);
-        printf("[+] Files Successfully Uploaded!\n");
+        printf("\n[+] Files Successfully Uploaded!\n");
     }
 }
 
 static void send_files(const struct options_client *opts) {
-    char file_name_buffer[BUF_SIZE] = {0};
     char buffer[BUF_SIZE] = {0};
     int converted_num_of_args = (int) htonl(number_of_non_option_arguments);
     int file_size;
     char file_size_string[10] = {0};
-    char receive_message[100];
+    char receive_message[100] = {0};
 
     // Send expected number of arguments (files to be sent) to server
     if(send(opts->socket_fd, &converted_num_of_args,
@@ -216,7 +215,7 @@ static void send_files(const struct options_client *opts) {
     // Get confirmation that server got file count
     while(1) {
         if(read(opts->socket_fd, receive_message, sizeof(receive_message)) > 0) {
-            printf("SERVER SAYS: %s\n", receive_message);
+            printf("SERVER RESPONSE: %s\n", receive_message);
             break;
         }
     }
@@ -227,19 +226,19 @@ static void send_files(const struct options_client *opts) {
         FILE* file_ptr;
         file_ptr = fopen(opts->file_names[i], "r");
         if(file_ptr == NULL) {
-            perror("[+] Cannot open file!\n");
+            perror("\t[+] Cannot open file!\n");
             exit(EXIT_FAILURE);
         }
 
         //a) Send file names to server, await response from server
-        printf("\nSending %s ...\n", opts->file_names[i]);
+        printf("\n[+] Sending %s ...\n", opts->file_names[i]);
         if(send(opts->socket_fd, opts->file_names[i], sizeof(opts->file_names[i]), 0) == -1) {
             perror("An error has occurred while transferring file name to server!\n");
             exit(EXIT_FAILURE);
         }
         while(1) {
             if(read(opts->socket_fd, receive_message, sizeof(receive_message)) > 0) {
-                printf("SERVER SAYS: %s\n", receive_message);
+                printf("\tSERVER RESPONSE: %s\n", receive_message);
                 break;
             }
         }
@@ -250,33 +249,37 @@ static void send_files(const struct options_client *opts) {
         file_size = ftell(file_ptr);
         fseek(file_ptr, 0, SEEK_SET);
         sprintf(file_size_string, "%d", file_size);
-        printf("File Size: %s\n", file_size_string);
+        printf("\tFile Size: %s\n", file_size_string);
 
         if(send(opts->socket_fd, file_size_string, sizeof(file_size_string), 0) == -1) {
-            perror("An error has occurred while transferring number of arguments to server!\n");
+            perror("\tAn error has occurred while transferring number of arguments to server!\n");
             exit(EXIT_FAILURE);
         }
-        memset(file_size_string, 0, sizeof(char) * 10);
-
         while(1) {
             if(read(opts->socket_fd, receive_message, sizeof(receive_message)) > 0) {
-                printf("SERVER SAYS: %s\n", receive_message);
+                printf("\tSERVER RESPONSE: %s\n", receive_message);
                 break;
             }
         }
         memset(receive_message, 0, sizeof(char) * 100);
-//
-//        //d) Read from file -> Save to buffer -> Send buffer to server
-        while(fgets(buffer, BUF_SIZE, file_ptr) != NULL) {
-            if(send(opts->socket_fd, buffer, sizeof(buffer), 0) == -1) {
-                perror("An error has occurred while transferring payload to server!\n");
+
+        //d) Read from file -> Save to buffer -> Send buffer to server -> Await response from server
+        while(fread(buffer, (unsigned long) file_size, 1, file_ptr)) {
+            if(send(opts->socket_fd, buffer, (unsigned long) file_size, 1) == -1) {
+                perror("\tAn error has occurred while transferring file payload to server!\n");
                 exit(EXIT_FAILURE);
             }
+            while(1) {
+                if(read(opts->socket_fd, receive_message, sizeof(receive_message)) > 0) {
+                    printf("\tSERVER RESPONSE: %s\n", receive_message);
+                    break;
+                }
+            }
+            memset(receive_message, 0, sizeof(char) * 100);
         }
 
         //e) Reset Buffer for next iteration
         memset(buffer, 0, sizeof(char) * BUF_SIZE);
-        memset(file_name_buffer, 0, sizeof(char) * BUF_SIZE);
         fclose(file_ptr);
     }
     close(opts->socket_fd);

@@ -22,7 +22,7 @@
 #include <dirent.h>
 
 #define BUF_SIZE 1024
-#define DEFAULT_PORT 5001
+#define DEFAULT_PORT 5000
 #define BACKLOG 5
 #define MAX_IP_LENGTH 20
 #define MAX_NAME_LENGTH 100
@@ -197,11 +197,10 @@ static void options_server_process(struct options_server *opts)
         make_client_directory(client_dir);
 
         //Receive data from client (1. Num of args, 2. File Length, 3. File Name, 4. File Payload)
-        char file_name_buffer[BUF_SIZE];
-        char buffer[BUF_SIZE];
+        char file_name_buffer[BUF_SIZE] = {0};
+        char payload_buffer[BUF_SIZE] = {0};
         unsigned int num_of_arguments_received;
-        char file_size_string[10];
-        int file_size;
+        char file_size_string[10] = {0};
 
         //1) NUM OF ARGS: Get # of arguments from client -> use it in for loop to write file x times
         if(read(opts->client_fd, &num_of_arguments_received,
@@ -209,7 +208,7 @@ static void options_server_process(struct options_server *opts)
             perror("An error has occurred while receiving number of arguments from client!\n");
             printf("CLIENT IP: %s\n", client_ip);
         }
-        printf("\nNumber of args received: %d\n", ntohl(num_of_arguments_received));
+        printf("\nNumber of files to be uploaded: %d\n", ntohl(num_of_arguments_received));
         num_of_arguments_received = ntohl(num_of_arguments_received);
 
         //1) NUM OF ARGS: Send acknowledgement to client
@@ -220,7 +219,7 @@ static void options_server_process(struct options_server *opts)
             int file_length = 0;
             char* response_file_name = (char*) malloc(BUF_SIZE * sizeof(char));
 
-            memset(buffer, 0, sizeof(char) * BUF_SIZE);
+            memset(payload_buffer, 0, sizeof(char) * BUF_SIZE);
             memset(file_name_buffer, 0, sizeof(char) * BUF_SIZE);
             memset(file_size_string, 0, sizeof(char) * 10);
             memset(response_file_name, 0, sizeof(char) * BUF_SIZE);
@@ -230,11 +229,11 @@ static void options_server_process(struct options_server *opts)
                 perror("An error has occurred while receiving file name from client!\n");
                 printf("CLIENT IP: %s\n", client_ip);
             }
-            printf("\nFile Received: %s\n", file_name_buffer);
+            printf("\nFile Name Received: %s\n", file_name_buffer);
 
             //FILE NAME: Send ack to client
             strcat(response_file_name, file_name_buffer);
-            strcat(response_file_name, " has been received!");
+            strcat(response_file_name, " is being transferred...");
             send(opts->client_fd, response_file_name, strlen(response_file_name), 0);
 
             //FILE LENGTH: Get from client
@@ -249,13 +248,18 @@ static void options_server_process(struct options_server *opts)
             const char* response_file_size = "Received File Size!";
             send(opts->client_fd, response_file_size, strlen(response_file_size), 0);
 
-//
-//            if(recv(opts->client_fd, buffer, sizeof(buffer), 0) == -1) {
-//                perror("An error has occurred while receiving payload from client!");
-//                printf("CLIENT IP: %s\n", client_ip);
-//            }
-//            printf("%s\n", file_name_buffer);
-//            printf("%s\n", buffer);
+            //FILE PAYLOAD: Get payload from client
+            if(recv(opts->client_fd, payload_buffer, sizeof(payload_buffer), 0) == -1) {
+                perror("An error has occurred while receiving file length from client!\n");
+                printf("CLIENT IP: %s\n", client_ip);
+            }
+            printf("File Payload Received: \n");
+            printf("++++++++++++++++++++++++++++++++++++++++\n");
+            printf("%s\n", payload_buffer);
+
+            //FILE PAYLOAD: Send ack to client
+            const char* response_payload = "Received Payload!";
+            send(opts->client_fd, response_payload, strlen(response_payload), 0);
 
             //Free file_name pointer
             free(response_file_name);

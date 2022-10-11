@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="v4"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Experimental">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Experimental"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Nightly">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Nightly"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Continuous">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Continuous"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SERVER">
+				<Option output="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_POSIX_C_SOURCE=200809L"/>
+					<Add option="-D_XOPEN_SOURCE=700"/>
+					<Add directory="/home/johnnyhui/Desktop/assignment_1_v2/src/../include"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/12/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 SERVER"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SERVER/fast">
+				<Option output="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_POSIX_C_SOURCE=200809L"/>
+					<Add option="-D_XOPEN_SOURCE=700"/>
+					<Add directory="/home/johnnyhui/Desktop/assignment_1_v2/src/../include"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/12/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 SERVER/fast"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CLIENT">
+				<Option output="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_POSIX_C_SOURCE=200809L"/>
+					<Add option="-D_XOPEN_SOURCE=700"/>
+					<Add directory="/home/johnnyhui/Desktop/assignment_1_v2/src/../include"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/12/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 CLIENT"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CLIENT/fast">
+				<Option output="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_POSIX_C_SOURCE=200809L"/>
+					<Add option="-D_XOPEN_SOURCE=700"/>
+					<Add directory="/home/johnnyhui/Desktop/assignment_1_v2/src/../include"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/12/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 CLIENT/fast"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="format">
+				<Option working_dir="/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 format"/>
+					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j20 -f &quot;/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/johnnyhui/Desktop/assignment_1_v2/include/conversion.h">
+			<Option target="SERVER"/>
+			<Option target="CLIENT"/>
+		</Unit>
+		<Unit filename="/home/johnnyhui/Desktop/assignment_1_v2/include/copy.h">
+			<Option target="SERVER"/>
+			<Option target="CLIENT"/>
+		</Unit>
+		<Unit filename="/home/johnnyhui/Desktop/assignment_1_v2/include/error.h">
+			<Option target="SERVER"/>
+			<Option target="CLIENT"/>
+		</Unit>
+		<Unit filename="/home/johnnyhui/Desktop/assignment_1_v2/src/Client.c">
+			<Option target="CLIENT"/>
+		</Unit>
+		<Unit filename="/home/johnnyhui/Desktop/assignment_1_v2/src/Server.c">
+			<Option target="SERVER"/>
+		</Unit>
+		<Unit filename="/home/johnnyhui/Desktop/assignment_1_v2/src/conversion.c">
+			<Option target="SERVER"/>
+			<Option target="CLIENT"/>
+		</Unit>
+		<Unit filename="/home/johnnyhui/Desktop/assignment_1_v2/src/copy.c">
+			<Option target="SERVER"/>
+			<Option target="CLIENT"/>
+		</Unit>
+		<Unit filename="/home/johnnyhui/Desktop/assignment_1_v2/src/error.c">
+			<Option target="SERVER"/>
+			<Option target="CLIENT"/>
+		</Unit>
+		<Unit filename="/home/johnnyhui/Desktop/assignment_1_v2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/johnnyhui/Desktop/assignment_1_v2/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
