@@ -12,8 +12,8 @@ IF (LINT)
 ENDIF ()
 
 # Make an executable
-add_executable(SERVER ${COMMON_SOURCE_LIST} ${SERVER_MAIN_SOURCE} ${HEADER_LIST})
-add_executable(CLIENT ${COMMON_SOURCE_LIST} ${CLIENT_MAIN_SOURCE} ${HEADER_LIST})
+add_executable(SERVER ${COMMON_SOURCE_LIST} ${SERVER_MAIN_SOURCE} ${HEADER_LIST} Server.c)
+add_executable(CLIENT ${COMMON_SOURCE_LIST} ${CLIENT_MAIN_SOURCE} ${HEADER_LIST} Client.c)
 
 # We need this directory, and users of our library will need it too
 target_include_directories(SERVER PRIVATE ../include)

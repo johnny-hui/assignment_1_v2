@@ -1,0 +1,2 @@
+Hello this is Johnny.\0
+Darcy sucks.\0
