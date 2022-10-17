@@ -278,17 +278,18 @@ static void options_server_process(struct options_server *opts)
             send(opts->client_fd, response_file_size, strlen(response_file_size), 0);
 
             //FILE PAYLOAD: Get payload from client
-            if(recv(opts->client_fd, payload_buffer, sizeof(payload_buffer), 0) == -1) {
-                perror("An error has occurred while receiving file length from client!\n");
-                printf("CLIENT IP: %s\n", client_ip);
-            }
-            printf("File Payload Received!\n");
-            printf("++++++++++++++++++++++++++++++++++++++++\n");
-            printf("%s\n", payload_buffer);
+            while(recv(opts->client_fd, payload_buffer, sizeof(payload_buffer), 0) != 0) {
+                printf("File Payload Received!\n");
+                printf("++++++++++++++++++++++++++++++++++++++++\n");
+                printf("%s\n", payload_buffer);
 
-            //FILE PAYLOAD: Send ack to client
-            const char* response_payload = "Received Payload!";
-            send(opts->client_fd, response_payload, strlen(response_payload), 0);
+              //FILE PAYLOAD: Send ack to client
+                const char* response_payload = "Received Payload!";
+                send(opts->client_fd, response_payload, strlen(response_payload), 0);
+
+                //Reset Payload Buffer
+                memset(payload_buffer, 0, sizeof(char) * BUF_SIZE);
+            }
 
             //Free file_name pointer
             free(response_file_name);

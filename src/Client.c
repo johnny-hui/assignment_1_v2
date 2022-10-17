@@ -230,7 +230,7 @@ static void options_client_process(struct options_client *opts)
  *          An options_client struct to be modified/read.
  */
 static void send_files(const struct options_client *opts) {
-    char buffer[BUF_SIZE] = {0};
+    char* buffer;
     int converted_num_of_args = (int) htonl(number_of_non_option_arguments);
     int file_size;
     char file_size_string[10] = {0};
@@ -276,9 +276,9 @@ static void send_files(const struct options_client *opts) {
         memset(receive_message, 0, sizeof(char) * 100);
 
         //c) Get file size, send to server (as string), await response from server
-        fseek(file_ptr, 0, SEEK_END);
+        fseek(file_ptr, 0L, SEEK_END);
         file_size = ftell(file_ptr);
-        fseek(file_ptr, 0, SEEK_SET);
+        fseek(file_ptr, 0L, SEEK_SET);
         sprintf(file_size_string, "%d", file_size);
         printf("\tFile Size: %s\n", file_size_string);
 
@@ -294,9 +294,15 @@ static void send_files(const struct options_client *opts) {
         }
         memset(receive_message, 0, sizeof(char) * 100);
 
-        //d) Read from file -> Save to buffer -> Send buffer to server -> Await response from server
-        while(fread(buffer, (unsigned long) file_size, 1, file_ptr)) {
-            if(send(opts->socket_fd, buffer, (unsigned long) file_size, 1) == -1) {
+        buffer = (char*) calloc((unsigned long) file_size, sizeof(char));
+        if(buffer == NULL) {
+            perror("An error has occurred while allocation of memory!\n");
+            exit(EXIT_FAILURE);
+        }
+
+        //d) Read from file -> Save to buffer -> Send buffer to server -> Await ACK response from server
+        while(fread(buffer, sizeof(buffer), BUF_SIZE, file_ptr)) {
+            if(send(opts->socket_fd, buffer, BUF_SIZE, 1) == -1) {
                 perror("\tAn error has occurred while transferring file payload to server!\n");
                 exit(EXIT_FAILURE);
             }
@@ -306,14 +312,16 @@ static void send_files(const struct options_client *opts) {
                     break;
                 }
             }
+
             memset(receive_message, 0, sizeof(char) * 100);
+            memset(buffer, 0, sizeof(char) * (unsigned long) file_size);
         }
 
-        memset(buffer, 0, sizeof(char) * BUF_SIZE);
+        free(buffer);
         fclose(file_ptr);
     }
 
-    //Disconnect from server (once file transfer is done)
+    //Disconnect from server (once files have all been transferred)
     close(opts->socket_fd);
 }
 
