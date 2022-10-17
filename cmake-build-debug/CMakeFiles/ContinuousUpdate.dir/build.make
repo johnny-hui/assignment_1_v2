@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/johnnyhui/Desktop/assignment_1_v2
+CMAKE_SOURCE_DIR = "/Users/Johnny/Desktop/assignment_1_v2 2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug
+CMAKE_BINARY_DIR = "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug"
 
 # Utility rule file for ContinuousUpdate.
 
@@ -67,7 +67,7 @@ include CMakeFiles/ContinuousUpdate.dir/compiler_depend.make
 include CMakeFiles/ContinuousUpdate.dir/progress.make
 
 CMakeFiles/ContinuousUpdate:
-	/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/ctest -D ContinuousUpdate
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ContinuousUpdate
 
 ContinuousUpdate: CMakeFiles/ContinuousUpdate
 ContinuousUpdate: CMakeFiles/ContinuousUpdate.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/ContinuousUpdate.dir/clean:
 .PHONY : CMakeFiles/ContinuousUpdate.dir/clean
 
 CMakeFiles/ContinuousUpdate.dir/depend:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/johnnyhui/Desktop/assignment_1_v2 /home/johnnyhui/Desktop/assignment_1_v2 /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/CMakeFiles/ContinuousUpdate.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/Johnny/Desktop/assignment_1_v2 2" "/Users/Johnny/Desktop/assignment_1_v2 2" "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/CMakeFiles/ContinuousUpdate.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/ContinuousUpdate.dir/depend
 

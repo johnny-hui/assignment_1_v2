@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/johnnyhui/Desktop/assignment_1_v2
+CMAKE_SOURCE_DIR = "/Users/Johnny/Desktop/assignment_1_v2 2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug
+CMAKE_BINARY_DIR = "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug"
 
 # Utility rule file for ContinuousBuild.
 
@@ -67,7 +67,7 @@ include CMakeFiles/ContinuousBuild.dir/compiler_depend.make
 include CMakeFiles/ContinuousBuild.dir/progress.make
 
 CMakeFiles/ContinuousBuild:
-	/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/ctest -D ContinuousBuild
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ContinuousBuild
 
 ContinuousBuild: CMakeFiles/ContinuousBuild
 ContinuousBuild: CMakeFiles/ContinuousBuild.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/ContinuousBuild.dir/clean:
 .PHONY : CMakeFiles/ContinuousBuild.dir/clean
 
 CMakeFiles/ContinuousBuild.dir/depend:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/johnnyhui/Desktop/assignment_1_v2 /home/johnnyhui/Desktop/assignment_1_v2 /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/CMakeFiles/ContinuousBuild.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/Johnny/Desktop/assignment_1_v2 2" "/Users/Johnny/Desktop/assignment_1_v2 2" "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/CMakeFiles/ContinuousBuild.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/ContinuousBuild.dir/depend
 

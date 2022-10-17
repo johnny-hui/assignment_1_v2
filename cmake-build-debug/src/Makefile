@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/johnnyhui/Desktop/assignment_1_v2
+CMAKE_SOURCE_DIR = "/Users/Johnny/Desktop/assignment_1_v2 2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug
+CMAKE_BINARY_DIR = "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/ctest --force-new-ctest-process $(ARGS)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -78,7 +78,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -107,49 +107,49 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/CMakeFiles /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src//CMakeFiles/progress.marks
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/CMakeFiles 0
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_progress_start "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/CMakeFiles" "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src//CMakeFiles/progress.marks"
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,22 +158,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/SERVER.dir/rule:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/SERVER.dir/rule
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/SERVER.dir/rule
 .PHONY : src/CMakeFiles/SERVER.dir/rule
 
 # Convenience name for target.
@@ -182,12 +182,12 @@ SERVER: src/CMakeFiles/SERVER.dir/rule
 
 # fast build rule for target.
 SERVER/fast:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/build
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/build
 .PHONY : SERVER/fast
 
 # Convenience name for target.
 src/CMakeFiles/CLIENT.dir/rule:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/CLIENT.dir/rule
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/CLIENT.dir/rule
 .PHONY : src/CMakeFiles/CLIENT.dir/rule
 
 # Convenience name for target.
@@ -196,12 +196,12 @@ CLIENT: src/CMakeFiles/CLIENT.dir/rule
 
 # fast build rule for target.
 CLIENT/fast:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/build
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/build
 .PHONY : CLIENT/fast
 
 # Convenience name for target.
 src/CMakeFiles/format.dir/rule:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/format.dir/rule
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/format.dir/rule
 .PHONY : src/CMakeFiles/format.dir/rule
 
 # Convenience name for target.
@@ -210,7 +210,7 @@ format: src/CMakeFiles/format.dir/rule
 
 # fast build rule for target.
 format/fast:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/format.dir/build.make src/CMakeFiles/format.dir/build
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/format.dir/build.make src/CMakeFiles/format.dir/build
 .PHONY : format/fast
 
 Client.o: Client.c.o
@@ -218,7 +218,7 @@ Client.o: Client.c.o
 
 # target to build an object file
 Client.c.o:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/Client.c.o
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/Client.c.o
 .PHONY : Client.c.o
 
 Client.i: Client.c.i
@@ -226,7 +226,7 @@ Client.i: Client.c.i
 
 # target to preprocess a source file
 Client.c.i:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/Client.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/Client.c.i
 .PHONY : Client.c.i
 
 Client.s: Client.c.s
@@ -234,7 +234,7 @@ Client.s: Client.c.s
 
 # target to generate assembly for a file
 Client.c.s:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/Client.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/Client.c.s
 .PHONY : Client.c.s
 
 Server.o: Server.c.o
@@ -242,7 +242,7 @@ Server.o: Server.c.o
 
 # target to build an object file
 Server.c.o:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/Server.c.o
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/Server.c.o
 .PHONY : Server.c.o
 
 Server.i: Server.c.i
@@ -250,7 +250,7 @@ Server.i: Server.c.i
 
 # target to preprocess a source file
 Server.c.i:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/Server.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/Server.c.i
 .PHONY : Server.c.i
 
 Server.s: Server.c.s
@@ -258,7 +258,7 @@ Server.s: Server.c.s
 
 # target to generate assembly for a file
 Server.c.s:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/Server.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/Server.c.s
 .PHONY : Server.c.s
 
 conversion.o: conversion.c.o
@@ -266,8 +266,8 @@ conversion.o: conversion.c.o
 
 # target to build an object file
 conversion.c.o:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/conversion.c.o
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/conversion.c.o
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/conversion.c.o
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/conversion.c.o
 .PHONY : conversion.c.o
 
 conversion.i: conversion.c.i
@@ -275,8 +275,8 @@ conversion.i: conversion.c.i
 
 # target to preprocess a source file
 conversion.c.i:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/conversion.c.i
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/conversion.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/conversion.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/conversion.c.i
 .PHONY : conversion.c.i
 
 conversion.s: conversion.c.s
@@ -284,8 +284,8 @@ conversion.s: conversion.c.s
 
 # target to generate assembly for a file
 conversion.c.s:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/conversion.c.s
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/conversion.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/conversion.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/conversion.c.s
 .PHONY : conversion.c.s
 
 copy.o: copy.c.o
@@ -293,8 +293,8 @@ copy.o: copy.c.o
 
 # target to build an object file
 copy.c.o:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/copy.c.o
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/copy.c.o
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/copy.c.o
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/copy.c.o
 .PHONY : copy.c.o
 
 copy.i: copy.c.i
@@ -302,8 +302,8 @@ copy.i: copy.c.i
 
 # target to preprocess a source file
 copy.c.i:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/copy.c.i
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/copy.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/copy.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/copy.c.i
 .PHONY : copy.c.i
 
 copy.s: copy.c.s
@@ -311,8 +311,8 @@ copy.s: copy.c.s
 
 # target to generate assembly for a file
 copy.c.s:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/copy.c.s
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/copy.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/copy.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/copy.c.s
 .PHONY : copy.c.s
 
 error.o: error.c.o
@@ -320,8 +320,8 @@ error.o: error.c.o
 
 # target to build an object file
 error.c.o:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/error.c.o
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/error.c.o
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/error.c.o
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/error.c.o
 .PHONY : error.c.o
 
 error.i: error.c.i
@@ -329,8 +329,8 @@ error.i: error.c.i
 
 # target to preprocess a source file
 error.c.i:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/error.c.i
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/error.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/error.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/error.c.i
 .PHONY : error.c.i
 
 error.s: error.c.s
@@ -338,8 +338,8 @@ error.s: error.c.s
 
 # target to generate assembly for a file
 error.c.s:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/error.c.s
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/error.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/SERVER.dir/build.make src/CMakeFiles/SERVER.dir/error.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CLIENT.dir/build.make src/CMakeFiles/CLIENT.dir/error.c.s
 .PHONY : error.c.s
 
 # Help Target
@@ -384,6 +384,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

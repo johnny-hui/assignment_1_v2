@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/SERVER.dir/error.c.o CMakeFiles/SERVER.dir/conversion.c.o CMakeFiles/SERVER.dir/copy.c.o CMakeFiles/SERVER.dir/Server.c.o -o server   -L/usr/local/lib 
+/Library/Developer/CommandLineTools/usr/bin/cc -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/SERVER.dir/error.c.o CMakeFiles/SERVER.dir/conversion.c.o CMakeFiles/SERVER.dir/copy.c.o CMakeFiles/SERVER.dir/Server.c.o -o server   -L/usr/local/lib 

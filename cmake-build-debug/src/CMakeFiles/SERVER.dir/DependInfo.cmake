@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/johnnyhui/Desktop/assignment_1_v2/src/Server.c" "src/CMakeFiles/SERVER.dir/Server.c.o" "gcc" "src/CMakeFiles/SERVER.dir/Server.c.o.d"
-  "/home/johnnyhui/Desktop/assignment_1_v2/src/conversion.c" "src/CMakeFiles/SERVER.dir/conversion.c.o" "gcc" "src/CMakeFiles/SERVER.dir/conversion.c.o.d"
-  "/home/johnnyhui/Desktop/assignment_1_v2/src/copy.c" "src/CMakeFiles/SERVER.dir/copy.c.o" "gcc" "src/CMakeFiles/SERVER.dir/copy.c.o.d"
-  "/home/johnnyhui/Desktop/assignment_1_v2/src/error.c" "src/CMakeFiles/SERVER.dir/error.c.o" "gcc" "src/CMakeFiles/SERVER.dir/error.c.o.d"
+  "/Users/Johnny/Desktop/assignment_1_v2 2/src/Server.c" "src/CMakeFiles/SERVER.dir/Server.c.o" "gcc" "src/CMakeFiles/SERVER.dir/Server.c.o.d"
+  "/Users/Johnny/Desktop/assignment_1_v2 2/src/conversion.c" "src/CMakeFiles/SERVER.dir/conversion.c.o" "gcc" "src/CMakeFiles/SERVER.dir/conversion.c.o.d"
+  "/Users/Johnny/Desktop/assignment_1_v2 2/src/copy.c" "src/CMakeFiles/SERVER.dir/copy.c.o" "gcc" "src/CMakeFiles/SERVER.dir/copy.c.o.d"
+  "/Users/Johnny/Desktop/assignment_1_v2 2/src/error.c" "src/CMakeFiles/SERVER.dir/error.c.o" "gcc" "src/CMakeFiles/SERVER.dir/error.c.o.d"
   )
 
 # Targets to which this target links.

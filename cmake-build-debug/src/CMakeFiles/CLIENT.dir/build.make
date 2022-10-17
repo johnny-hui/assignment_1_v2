@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/johnnyhui/Desktop/assignment_1_v2
+CMAKE_SOURCE_DIR = "/Users/Johnny/Desktop/assignment_1_v2 2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug
+CMAKE_BINARY_DIR = "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/CLIENT.dir/depend.make
@@ -72,58 +72,58 @@ include src/CMakeFiles/CLIENT.dir/flags.make
 src/CMakeFiles/CLIENT.dir/error.c.o: src/CMakeFiles/CLIENT.dir/flags.make
 src/CMakeFiles/CLIENT.dir/error.c.o: ../src/error.c
 src/CMakeFiles/CLIENT.dir/error.c.o: src/CMakeFiles/CLIENT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/CLIENT.dir/error.c.o"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && $(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;-checks=*,-llvmlibc-restrict-system-libc-headers,-cppcoreguidelines-init-variables,-clang-analyzer-security.insecureAPI.strcpy,-concurrency-mt-unsafe,-android-cloexec-accept,-android-cloexec-dup,-google-readability-todo,-cppcoreguidelines-avoid-magic-numbers,-readability-magic-numbers,-cert-dcl03-c,-hicpp-static-assert,-misc-static-assert,-altera-struct-pack-align,-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling;--quiet;--extra-arg-before=--driver-mode=gcc" --source=/home/johnnyhui/Desktop/assignment_1_v2/src/error.c -- /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/CLIENT.dir/error.c.o -MF CMakeFiles/CLIENT.dir/error.c.o.d -o CMakeFiles/CLIENT.dir/error.c.o -c /home/johnnyhui/Desktop/assignment_1_v2/src/error.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/CLIENT.dir/error.c.o"
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && $(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;-checks=*,-llvmlibc-restrict-system-libc-headers,-cppcoreguidelines-init-variables,-clang-analyzer-security.insecureAPI.strcpy,-concurrency-mt-unsafe,-android-cloexec-accept,-android-cloexec-dup,-google-readability-todo,-cppcoreguidelines-avoid-magic-numbers,-readability-magic-numbers,-cert-dcl03-c,-hicpp-static-assert,-misc-static-assert,-altera-struct-pack-align,-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling;--quiet;--extra-arg-before=--driver-mode=gcc" --source="/Users/Johnny/Desktop/assignment_1_v2 2/src/error.c" -- /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/CLIENT.dir/error.c.o -MF CMakeFiles/CLIENT.dir/error.c.o.d -o CMakeFiles/CLIENT.dir/error.c.o -c "/Users/Johnny/Desktop/assignment_1_v2 2/src/error.c"
 
 src/CMakeFiles/CLIENT.dir/error.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CLIENT.dir/error.c.i"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/johnnyhui/Desktop/assignment_1_v2/src/error.c > CMakeFiles/CLIENT.dir/error.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/Johnny/Desktop/assignment_1_v2 2/src/error.c" > CMakeFiles/CLIENT.dir/error.c.i
 
 src/CMakeFiles/CLIENT.dir/error.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CLIENT.dir/error.c.s"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/johnnyhui/Desktop/assignment_1_v2/src/error.c -o CMakeFiles/CLIENT.dir/error.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/Johnny/Desktop/assignment_1_v2 2/src/error.c" -o CMakeFiles/CLIENT.dir/error.c.s
 
 src/CMakeFiles/CLIENT.dir/conversion.c.o: src/CMakeFiles/CLIENT.dir/flags.make
 src/CMakeFiles/CLIENT.dir/conversion.c.o: ../src/conversion.c
 src/CMakeFiles/CLIENT.dir/conversion.c.o: src/CMakeFiles/CLIENT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/CMakeFiles/CLIENT.dir/conversion.c.o"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && $(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;-checks=*,-llvmlibc-restrict-system-libc-headers,-cppcoreguidelines-init-variables,-clang-analyzer-security.insecureAPI.strcpy,-concurrency-mt-unsafe,-android-cloexec-accept,-android-cloexec-dup,-google-readability-todo,-cppcoreguidelines-avoid-magic-numbers,-readability-magic-numbers,-cert-dcl03-c,-hicpp-static-assert,-misc-static-assert,-altera-struct-pack-align,-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling;--quiet;--extra-arg-before=--driver-mode=gcc" --source=/home/johnnyhui/Desktop/assignment_1_v2/src/conversion.c -- /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/CLIENT.dir/conversion.c.o -MF CMakeFiles/CLIENT.dir/conversion.c.o.d -o CMakeFiles/CLIENT.dir/conversion.c.o -c /home/johnnyhui/Desktop/assignment_1_v2/src/conversion.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/CMakeFiles/CLIENT.dir/conversion.c.o"
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && $(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;-checks=*,-llvmlibc-restrict-system-libc-headers,-cppcoreguidelines-init-variables,-clang-analyzer-security.insecureAPI.strcpy,-concurrency-mt-unsafe,-android-cloexec-accept,-android-cloexec-dup,-google-readability-todo,-cppcoreguidelines-avoid-magic-numbers,-readability-magic-numbers,-cert-dcl03-c,-hicpp-static-assert,-misc-static-assert,-altera-struct-pack-align,-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling;--quiet;--extra-arg-before=--driver-mode=gcc" --source="/Users/Johnny/Desktop/assignment_1_v2 2/src/conversion.c" -- /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/CLIENT.dir/conversion.c.o -MF CMakeFiles/CLIENT.dir/conversion.c.o.d -o CMakeFiles/CLIENT.dir/conversion.c.o -c "/Users/Johnny/Desktop/assignment_1_v2 2/src/conversion.c"
 
 src/CMakeFiles/CLIENT.dir/conversion.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CLIENT.dir/conversion.c.i"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/johnnyhui/Desktop/assignment_1_v2/src/conversion.c > CMakeFiles/CLIENT.dir/conversion.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/Johnny/Desktop/assignment_1_v2 2/src/conversion.c" > CMakeFiles/CLIENT.dir/conversion.c.i
 
 src/CMakeFiles/CLIENT.dir/conversion.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CLIENT.dir/conversion.c.s"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/johnnyhui/Desktop/assignment_1_v2/src/conversion.c -o CMakeFiles/CLIENT.dir/conversion.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/Johnny/Desktop/assignment_1_v2 2/src/conversion.c" -o CMakeFiles/CLIENT.dir/conversion.c.s
 
 src/CMakeFiles/CLIENT.dir/copy.c.o: src/CMakeFiles/CLIENT.dir/flags.make
 src/CMakeFiles/CLIENT.dir/copy.c.o: ../src/copy.c
 src/CMakeFiles/CLIENT.dir/copy.c.o: src/CMakeFiles/CLIENT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/CMakeFiles/CLIENT.dir/copy.c.o"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && $(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;-checks=*,-llvmlibc-restrict-system-libc-headers,-cppcoreguidelines-init-variables,-clang-analyzer-security.insecureAPI.strcpy,-concurrency-mt-unsafe,-android-cloexec-accept,-android-cloexec-dup,-google-readability-todo,-cppcoreguidelines-avoid-magic-numbers,-readability-magic-numbers,-cert-dcl03-c,-hicpp-static-assert,-misc-static-assert,-altera-struct-pack-align,-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling;--quiet;--extra-arg-before=--driver-mode=gcc" --source=/home/johnnyhui/Desktop/assignment_1_v2/src/copy.c -- /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/CLIENT.dir/copy.c.o -MF CMakeFiles/CLIENT.dir/copy.c.o.d -o CMakeFiles/CLIENT.dir/copy.c.o -c /home/johnnyhui/Desktop/assignment_1_v2/src/copy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/CMakeFiles/CLIENT.dir/copy.c.o"
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && $(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;-checks=*,-llvmlibc-restrict-system-libc-headers,-cppcoreguidelines-init-variables,-clang-analyzer-security.insecureAPI.strcpy,-concurrency-mt-unsafe,-android-cloexec-accept,-android-cloexec-dup,-google-readability-todo,-cppcoreguidelines-avoid-magic-numbers,-readability-magic-numbers,-cert-dcl03-c,-hicpp-static-assert,-misc-static-assert,-altera-struct-pack-align,-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling;--quiet;--extra-arg-before=--driver-mode=gcc" --source="/Users/Johnny/Desktop/assignment_1_v2 2/src/copy.c" -- /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/CLIENT.dir/copy.c.o -MF CMakeFiles/CLIENT.dir/copy.c.o.d -o CMakeFiles/CLIENT.dir/copy.c.o -c "/Users/Johnny/Desktop/assignment_1_v2 2/src/copy.c"
 
 src/CMakeFiles/CLIENT.dir/copy.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CLIENT.dir/copy.c.i"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/johnnyhui/Desktop/assignment_1_v2/src/copy.c > CMakeFiles/CLIENT.dir/copy.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/Johnny/Desktop/assignment_1_v2 2/src/copy.c" > CMakeFiles/CLIENT.dir/copy.c.i
 
 src/CMakeFiles/CLIENT.dir/copy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CLIENT.dir/copy.c.s"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/johnnyhui/Desktop/assignment_1_v2/src/copy.c -o CMakeFiles/CLIENT.dir/copy.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/Johnny/Desktop/assignment_1_v2 2/src/copy.c" -o CMakeFiles/CLIENT.dir/copy.c.s
 
 src/CMakeFiles/CLIENT.dir/Client.c.o: src/CMakeFiles/CLIENT.dir/flags.make
 src/CMakeFiles/CLIENT.dir/Client.c.o: ../src/Client.c
 src/CMakeFiles/CLIENT.dir/Client.c.o: src/CMakeFiles/CLIENT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/CLIENT.dir/Client.c.o"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && $(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;-checks=*,-llvmlibc-restrict-system-libc-headers,-cppcoreguidelines-init-variables,-clang-analyzer-security.insecureAPI.strcpy,-concurrency-mt-unsafe,-android-cloexec-accept,-android-cloexec-dup,-google-readability-todo,-cppcoreguidelines-avoid-magic-numbers,-readability-magic-numbers,-cert-dcl03-c,-hicpp-static-assert,-misc-static-assert,-altera-struct-pack-align,-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling;--quiet;--extra-arg-before=--driver-mode=gcc" --source=/home/johnnyhui/Desktop/assignment_1_v2/src/Client.c -- /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/CLIENT.dir/Client.c.o -MF CMakeFiles/CLIENT.dir/Client.c.o.d -o CMakeFiles/CLIENT.dir/Client.c.o -c /home/johnnyhui/Desktop/assignment_1_v2/src/Client.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/CLIENT.dir/Client.c.o"
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && $(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;-checks=*,-llvmlibc-restrict-system-libc-headers,-cppcoreguidelines-init-variables,-clang-analyzer-security.insecureAPI.strcpy,-concurrency-mt-unsafe,-android-cloexec-accept,-android-cloexec-dup,-google-readability-todo,-cppcoreguidelines-avoid-magic-numbers,-readability-magic-numbers,-cert-dcl03-c,-hicpp-static-assert,-misc-static-assert,-altera-struct-pack-align,-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling;--quiet;--extra-arg-before=--driver-mode=gcc" --source="/Users/Johnny/Desktop/assignment_1_v2 2/src/Client.c" -- /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/CLIENT.dir/Client.c.o -MF CMakeFiles/CLIENT.dir/Client.c.o.d -o CMakeFiles/CLIENT.dir/Client.c.o -c "/Users/Johnny/Desktop/assignment_1_v2 2/src/Client.c"
 
 src/CMakeFiles/CLIENT.dir/Client.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CLIENT.dir/Client.c.i"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/johnnyhui/Desktop/assignment_1_v2/src/Client.c > CMakeFiles/CLIENT.dir/Client.c.i
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/Johnny/Desktop/assignment_1_v2 2/src/Client.c" > CMakeFiles/CLIENT.dir/Client.c.i
 
 src/CMakeFiles/CLIENT.dir/Client.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CLIENT.dir/Client.c.s"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/johnnyhui/Desktop/assignment_1_v2/src/Client.c -o CMakeFiles/CLIENT.dir/Client.c.s
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && /Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/Johnny/Desktop/assignment_1_v2 2/src/Client.c" -o CMakeFiles/CLIENT.dir/Client.c.s
 
 # Object files for target CLIENT
 CLIENT_OBJECTS = \
@@ -141,18 +141,18 @@ src/client: src/CMakeFiles/CLIENT.dir/copy.c.o
 src/client: src/CMakeFiles/CLIENT.dir/Client.c.o
 src/client: src/CMakeFiles/CLIENT.dir/build.make
 src/client: src/CMakeFiles/CLIENT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable client"
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CLIENT.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable client"
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CLIENT.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/CLIENT.dir/build: src/client
 .PHONY : src/CMakeFiles/CLIENT.dir/build
 
 src/CMakeFiles/CLIENT.dir/clean:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src && $(CMAKE_COMMAND) -P CMakeFiles/CLIENT.dir/cmake_clean.cmake
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" && $(CMAKE_COMMAND) -P CMakeFiles/CLIENT.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/CLIENT.dir/clean
 
 src/CMakeFiles/CLIENT.dir/depend:
-	cd /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/johnnyhui/Desktop/assignment_1_v2 /home/johnnyhui/Desktop/assignment_1_v2/src /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug/src/CMakeFiles/CLIENT.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/Johnny/Desktop/assignment_1_v2 2" "/Users/Johnny/Desktop/assignment_1_v2 2/src" "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug" "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src" "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug/src/CMakeFiles/CLIENT.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : src/CMakeFiles/CLIENT.dir/depend
 

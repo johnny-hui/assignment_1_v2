@@ -1,11 +1,11 @@
-/home/johnnyhui/Downloads/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/johnnyhui/Desktop/assignment_1_v2 -B /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug
--- The C compiler identification is GNU 12.2.1
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S "/Users/Johnny/Desktop/assignment_1_v2 2" -B "/Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug"
+-- The C compiler identification is AppleClang 13.0.0.13000029
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Found Doxygen: /usr/bin/doxygen (found version "1.9.1") found components: doxygen dot 
+-- Found Doxygen: /usr/local/bin/doxygen (found version "1.9.5") found components: doxygen dot 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/johnnyhui/Desktop/assignment_1_v2/cmake-build-debug
+-- Build files have been written to: /Users/Johnny/Desktop/assignment_1_v2 2/cmake-build-debug
